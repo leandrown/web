@@ -1,33 +1,87 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-
-// Componente: Bloco isolado de HTML, CSS e JS, o qual nao interfere no restante da aplicacao
-// Sempre com primeira letra maiuscula, o componente eh uma funcao que retorna algum
-// conteudo HTML, CSS ou mesmo JavaScript
-// Como regra, o React usa sempre UM componente por arquivo
-
-// Propriedade: Informacoes que um componente PAI passa para o componente FILHO
-// Caracteristica do componente (atributos em HTML)
-// NOTA: quando mais de um componente eh inserido dentro do render() deve-se usar um container,
-// geralmente usando uma tag <div></div>, porem isso pode atrapalhar a estilizacao em alguns casos.
-// Como alternativa, pode ser usado o conceito de fragment, usando tags vazias ' <></> '
-
-// Estado: Informacoes mantidas pelo componente (Lembrar: conceito de imutabilidade)
-// Informacao que o componente vai manipular, Nunca altera uma informacao do estado diretamente.
-// Usamos sempre uma funcao auxiliar que vai dar a opcao para alterar o estado.
+import './global.css';
+import './App.css';
+import './Sidebar.css';
 
 function App() {
-   const [counter, setCounter] = useState(0);
-
-   function incrementCounter() {
-      setCounter(counter + 1);
-   }
 
   return (
-      <>
-         <h1>Contador: {counter}</h1>
-         <button onClick={incrementCounter}>Incrementar</button>
-      </>
+      <div id="app">
+         <aside>
+            <strong>Cadastrar</strong>
+            <form>
+               <div className="input-block">
+                  <label htmlFor="github_username">Usuário do Github</label>
+                  <input name="github_username" id="github_username" required />
+               </div>
+               <div className="input-block">
+                  <label htmlFor="techs">Tecnologias</label>
+                  <input name="techs" id="techs" required />
+               </div>
+               <div className="input-group">
+                  <div className="input-block">
+                     <label htmlFor="latitude">Latitude</label>
+                     <input name="latitude" id="latitude" required />
+                  </div>
+                  <div className="input-block">
+                     <label htmlFor="longitude">Longitude</label>
+                     <input name="longitude" id="longitude" required />
+                  </div>
+               </div>
+
+               <button type="submit">Salvar</button>
+            </form>
+         </aside>
+         <main>
+            <ul>
+               <li className="dev-item">
+                  <header>
+                     <img src="https://avatars1.githubusercontent.com/u/1755147?s=460&v=4" alt="Leandro Vieira" />
+                     <div className="user-info">
+                        <strong>Leandro Vieira</strong>
+                        <span>ReactJS, React Native, NodeJS</span>
+                     </div>
+                  </header>
+                  <p>Passion for games, TypeScript and C#</p>
+                  <a href="https://github.com/leandrown">Acessar perfil no Github</a>
+               </li>
+               <li className="dev-item">
+                  <header>
+                     <img src="https://avatars1.githubusercontent.com/u/1755147?s=460&v=4" alt="Leandro Vieira" />
+                     <div className="user-info">
+                        <strong>Leandro Vieira</strong>
+                        <span>ReactJS, React Native, NodeJS</span>
+                     </div>
+                  </header>
+                  <p>Passion for games, TypeScript and C#</p>
+                  <a href="https://github.com/leandrown">Acessar perfil no Github</a>
+               </li>
+               <li className="dev-item">
+                  <header>
+                     <img src="https://avatars1.githubusercontent.com/u/1755147?s=460&v=4" alt="Leandro Vieira" />
+                     <div className="user-info">
+                        <strong>Leandro Vieira</strong>
+                        <span>ReactJS, React Native, NodeJS</span>
+                     </div>
+                  </header>
+                  <p>Passion for games, TypeScript and C#</p>
+                  <a href="https://github.com/leandrown">Acessar perfil no Github</a>
+               </li>
+               <li className="dev-item">
+                  <header>
+                     <img src="https://avatars1.githubusercontent.com/u/1755147?s=460&v=4" alt="Leandro Vieira" />
+                     <div className="user-info">
+                        <strong>Leandro Vieira</strong>
+                        <span>ReactJS, React Native, NodeJS</span>
+                     </div>
+                  </header>
+                  <p>Passion for games, TypeScript and C#</p>
+                  <a href="https://github.com/leandrown">Acessar perfil no Github</a>
+               </li>
+            </ul>
+         </main>
+      </div>
   );
 }
 
